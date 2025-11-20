@@ -47,4 +47,21 @@ public class Grid {
     public void setNbGeneration(int nbGeneration) {
         this.nbGeneration = nbGeneration;
     }
+
+    public void afficher() {
+
+//        for (int i = 0; i < getMyGrid().size(); i++) {
+//            for (int j = 0; j < getMyGrid().get(i).size(); j++) {
+//                System.out.print(getMyGrid().get(i).get(j));
+//            }
+//            System.out.println();
+//        }
+
+        for (List<Automate> automateList : getMyGrid()) {
+            for (Automate automate : automateList) {
+                System.out.print(automate);
+            }
+            System.out.println();
+        }
+    }
 }
