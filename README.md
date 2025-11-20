@@ -1,34 +1,42 @@
-# Jeu de la vie (Conway)
+# Jeu de la vie (Conway) 🌱
 
-Ce projet implémente les bases d'un automate cellulaire pour le "Jeu de la vie" de John Conway en Java.
+Bienvenue ! 😊 Ce projet implémente les bases d'un automate cellulaire pour le "Jeu de la vie" de John Conway en Java.
 
-## Prérequis
-- Java 11+ (ou la version Java ciblée par le `pom.xml`).
+## Prérequis ✅
+- Java 11+ (ou la version Java ciblée par le `pom.xml`)
 - Maven 3.x
 
-## Structure du projet
+## Structure du projet 📁
 - **Sources** : `src/main/java`
 - **Tests** : `src/test/java` (à compléter si nécessaire)
-- **Maven** : le projet utilise `pom.xml` pour la compilation et la gestion des dépendances.
+- **Maven** : le projet utilise `pom.xml` pour la compilation et la gestion des dépendances
 
-## Stade du programme
+## Stade du programme 🚧
 
-### Premier Stade
+### Premier stade 🟢
+
 - Implémentation des classes principales pour représenter la grille et l'automate :
-	- `src/main/java/fr/diginamic/automatesCellulaire/entites/Grid.java`
-	- `src/main/java/fr/diginamic/automatesCellulaire/entites/Automate.java`
-- Initialisation des Getters et Setters nécessaire pour récupérer ou redéfinir les valeurs des proriété.
+  - `src/main/java/fr/diginamic/automatesCellulaire/entites/Grid.java`
+  - `src/main/java/fr/diginamic/automatesCellulaire/entites/Automate.java`
+- Initialisation des getters/setters nécessaires pour récupérer ou redéfinir les propriétés.
 
-*disponible sur la branche `class/initGridAndAutomate`.*
+*Disponible sur la branche `class/initGridAndAutomate`.*
 
-### Deuxième Stade
-Ajouter les méthodes nécessaire dans la classe Grid.
-- Une permettant l'affichage `afficher`
-- Méthode compteVoisin qui va avoir pour but d'initializé un offset **(une grille de décalage)**
-qui va nous servir pour calculer l'enplacement des cellules
-- Méthode nextGeneration de vérifier le stade des automates
-et d'utiliser les règles du jeu concernant automates qui vivent
-ou meurt
+### Deuxième stade 🛠️
 
-## Auteur
-Projet développé dans le cadre d'un exercice/TP — sources par `fr.diginamic.automatesCellulaire.entites`.
+Ajouter les méthodes nécessaires dans la classe `Grid` :
+- une méthode d'affichage : `afficher()`
+- une méthode `compteVoisin()` pour calculer le nombre de voisins (avec un offset / grille de décalage)
+- une méthode `nextGeneration()` pour appliquer les règles du jeu et passer à la génération suivante
+
+*Disponible sur la branche `class/methodeGrid`.*
+
+### Troisième stade 🔬
+
+Utilisation d'une classe `main` pour tester l'automate cellulaire manuellement.
+
+## Auteur ✍️
+
+`AzraKaynAxel`
+
+Projet développé dans le cadre d'un exercice/TP — sources dans `fr.diginamic.automatesCellulaire.entites`.
