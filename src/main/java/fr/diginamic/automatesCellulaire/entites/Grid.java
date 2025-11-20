@@ -64,4 +64,32 @@ public class Grid {
             System.out.println();
         }
     }
+
+    public int compterVoisin (int x,  int y) {
+        int count = 0;
+        int[][] offsets = {
+                {-1, -1}, {-1, 0}, {-1, 1},
+                { 0, -1},          { 0, 1},
+                { 1, -1}, { 1, 0}, { 1, 1}
+        };
+
+        // L'idée est de parcourir tout les offset pour ensuite vérifier si la case est valide ou non
+        for (int[] offset : offsets) {
+
+            int dx = offset[0]; // Correspond au décalage sur l'axe x
+            int dy = offset[1]; // Correspond au décalage sur l'axe y
+
+            int nx = x + dx; // Pour une nouvelle ligne
+            int ny = y + dy; // Pour une nouvelle colonne
+
+            //maintenant on vérifie si la case est valide ou en dehors des limites
+            if (nx >=0 && nx < getHeight() && ny >= 0 && ny < getWidth()) {
+                // Accède à la cellule et vérifie son état en utilisant les index
+                if (getMyGrid().get(nx).get(ny).getState()) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 }
