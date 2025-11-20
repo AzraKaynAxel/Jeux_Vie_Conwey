@@ -92,4 +92,41 @@ public class Grid {
         }
         return count;
     }
+
+    public void nextGeneration() {
+        int voisins;
+
+        // tableau temporaire pour ne pas altérer le fonctionnement des automates
+        boolean[][] newStates = new boolean[getHeight()][getWidth()];
+
+        // Parcour la grille actuelle
+        for (int i = 0; i < getHeight(); i++) {
+            for (int j = 0; j < getWidth(); j++) {
+                voisins = compterVoisin(i, j);
+
+                boolean etatActuel = getMyGrid().get(i).get(j).getState();
+
+                if (etatActuel) {
+                    if (voisins == 3 || voisins == 2) {
+                        newStates[i][j] = true;
+                    } else {
+                        newStates[i][j] = false;
+                    }
+                } else {
+                    if (voisins == 3) {
+                        newStates[i][j] = true;
+                    } else {
+                        newStates[i][j] = false;
+                    }
+                }
+            }
+        }
+
+        // Dernière étape mettre à jour la grille pour la génération suivante
+        for (int i = 0; i < getHeight(); i++) {
+            for (int j = 0; j < getWidth(); j++) {
+                getMyGrid().get(i).get(j).setState(newStates[i][j]);
+            }
+        }
+    }
 }
